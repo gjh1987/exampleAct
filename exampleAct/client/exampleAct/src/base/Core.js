@@ -323,6 +323,12 @@ Core = {};
             return this.__instance;
         }
     }
+
+
+    Core.$AlwaysDefines("Class",function(b)
+    {
+        return Core.baseClass.extend(b);
+    });
 })()
 
 typeof require !== 'undefined' && require("fs") && (module.exports = Core);

@@ -71,35 +71,13 @@ cc.game.onStart = function(){
     // The game will be resized when browser size change
     cc.view.resizeWithBrowserSize(true);
 
-    require("test/test1.js");
+    require("test/test2.js");
     //load resources
     //cc.LoaderScene.preload(g_resources, function () {
     //    cc.director.runScene(new HelloWorldScene());
     //}, this);
 
-    // Core.baseClass.extend({
-    //
-    //    ClassName:"Test.Class.A",
-    //    a:7,
-    //    c:2,
-    //    testVale:{
-    //        get:function()
-    //        {
-    //            return this.a+this.c;
-    //        },
-    //        set:function(v)
-    //        {
-    //            this.a *= v;
-    //        }
-    //    }
-    //}).Static({
-    //    Instance:Core.Instance
-    //})
-    //
-    //var c = Test.Class.A.Instance;
-    //console.log(c.testVale);
-    //c.testVale = 100;
-    //console.log(c.testVale);
+
 
 };
 cc.game.run();
