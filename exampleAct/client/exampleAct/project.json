@@ -12,7 +12,10 @@
     "modules" : ["cocos2d"],
 
     "jsList" : [
-        "src/resource.js",
-        "src/app.js"
+        "src/base/Core.js",
+        "src/base/CBaseHelper.js",
+        "src/base/CMapArray.js",
+        "src/base/CObserData.js",
+        "src/base/CMsgBase.js"
     ]
 }
