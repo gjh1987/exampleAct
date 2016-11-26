@@ -6,7 +6,7 @@ Core = {};
 (function()
 {
     Core.$AlwaysGetMember = function(a, c) {
-        c || (c = this);
+        c || (c = global);
         if (!a || 0 >= a.length) return c;
         for (var b = a.split("."), d = 0; d < b.length; d++) {
             var e = b[d];
@@ -16,6 +16,20 @@ Core = {};
             else {
 
                 c = c[e] = {};
+            }
+        }
+        return c
+    }
+    Core.$TryGetMember = function(a, c) {
+        c || (c = global);
+        if (!a || 0 >= a.length) return c;
+        for (var b = a.split("."), d = 0; d < b.length; d++) {
+            var e = b[d];
+            if (!e || 0 === e.length) return null;
+            if (c.hasOwnProperty(e))
+                c = c[e];
+            else {
+                return null;
             }
         }
         return c
@@ -327,7 +341,21 @@ Core = {};
 
     Core.$AlwaysDefines("Class",function(b)
     {
-        return Core.baseClass.extend(b);
+        if(b.Base)
+        {
+            var baseClass = Core.$TryGetMember(b.Base);
+            if(baseClass && baseClass.extend)
+            {
+                return baseClass.extend(b);
+            }
+            else
+            {
+                throw "not find baseClass:"+ b.Base;
+                return null;
+            }
+        }
+        else
+            return Core.baseClass.extend(b);
     });
 })()
 
