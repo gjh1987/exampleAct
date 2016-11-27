@@ -46,8 +46,8 @@ Core.mapArrayHelper = {
     }
 
 }
-Core.mapArray =  Core.baseClass.extend({
-
+Class({
+    ClassName:"Core.mapArray",
     ctor:function(key,skeys)
     {
         var maps = {};
