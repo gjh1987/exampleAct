@@ -71,11 +71,10 @@ cc.game.onStart = function(){
     // The game will be resized when browser size change
     cc.view.resizeWithBrowserSize(true);
 
-    require("test/test4.js");
     //load resources
-    //cc.LoaderScene.preload(g_resources, function () {
-    //    cc.director.runScene(new HelloWorldScene());
-    //}, this);
+    cc.LoaderScene.preload(Game.Resource.test, function () {
+        require("test/test5.js");
+    }, this);
 
 
 

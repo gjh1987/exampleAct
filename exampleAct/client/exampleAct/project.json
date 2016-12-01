@@ -16,6 +16,13 @@
         "src/base/CBaseHelper.js",
         "src/base/CMapArray.js",
         "src/base/CObserData.js",
-        "src/base/CMsgBase.js"
+        "src/base/CMsgBase.js",
+
+
+        "src/data/static/staticInformationManagerBaseJson.js",
+        "src/data/static/staticInformationJson.js",
+        "src/data/static/Data.js",
+        "src/config/config.js",
+        "src/resource.js"
     ]
 }
